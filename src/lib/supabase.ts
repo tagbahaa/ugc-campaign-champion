@@ -2,9 +2,9 @@
 import { createClient } from '@supabase/supabase-js';
 import type { Database } from '../types/supabase';
 
-// TODO: Replace with environment variables before production
-// These are temporary static credentials for development only
-const supabaseUrl = 'https://your-actual-project-url.supabase.co';
-const supabaseAnonKey = 'your-actual-anon-key';
+// For development purposes, we'll use mock data instead of trying to connect to Supabase
+// In production, replace these with actual environment variables
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || 'https://placeholder-project.supabase.co';
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || 'placeholder-key';
 
 export const supabase = createClient<Database>(supabaseUrl, supabaseAnonKey);
